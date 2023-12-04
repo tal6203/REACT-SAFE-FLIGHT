@@ -34,7 +34,7 @@ const Footer = () => {
               &nbsp;Phone: <a href={`tel:${phoneNumber}`} onClick={handlePhoneClick} style={{ color: 'white' }}>&nbsp;(+972) 52-681-2203</a><br />
             </span>
             <span style={{ display: 'flex', justifyContent:'center' }}>
-              <i className="material-icons">link</i> &nbsp;Linkedin: <a href='https://www.linkedin.com/in/tal-abutbul' style={{ color: 'white' }}>&nbsp;www.linkedin.com/in/tal-abutbul</a>
+              <i className="material-icons">link</i> &nbsp;Linkedin: <a href='https://www.linkedin.com/in/tal-abutbul' target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>&nbsp;www.linkedin.com/in/tal-abutbul</a>
             </span>
           </p>
           </div>
