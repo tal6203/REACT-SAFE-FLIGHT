@@ -1,0 +1,37 @@
+.switch i.material-icons {
+    font-size: 16px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  
+  .switch label input[type=checkbox]:checked+.lever {
+    background-color: #d8860b;
+  }
+  .switch label input[type=checkbox]:checked+.lever:after {
+    background-color: white;
+  }
+
+  .switch label .lever:after {
+    margin-top: 6px;
+  }
+
+  .switch i.sun-icon {
+    left: 2px;
+    color: #094d82;
+  }
+  
+  .switch i.moon-icon {
+    color: #d8860b;
+    left: 21px;
+  }
+  
+
+  
+
+
+  
+ 
+  

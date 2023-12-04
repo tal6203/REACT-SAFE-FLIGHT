@@ -1,0 +1,169 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+html{
+  height: 100%;
+  background-color: #B9FFFE;
+}
+
+.dropdown-content {
+  top: 100% !important;
+  width: auto !important; 
+}
+
+.dropdown-content i.material-icons {
+  font-size: 20px;
+}
+
+.airplane-icon {
+  font-size: 48px; 
+  color: #2196F3; 
+  vertical-align: middle;
+}
+
+
+.App-header {
+  flex: 1;
+}
+
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url('./components/font/OpenSans.ttf') format('truetype');
+}
+
+
+
+
+.App-footer {
+  flex-shrink: 0;
+  background-color: #2196F3;
+  color: white;
+  text-align: center;
+  font-family: OpenSans;
+}
+
+.flight-animation-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes flightAnimation {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+
+.flight-animation {
+  animation: flightAnimation 2s infinite;
+}
+
+.brand-logo.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.modal{
+  border: 5px solid black;
+  border-radius: 20px;
+}
+
+.custom-modal{
+  max-width: 400px; 
+  max-height: 80%; 
+  border-radius: 10px;
+}
+
+
+.link-button {
+  background: none;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.Small.material-icons {
+  font-size: 24px;
+}
+
+@media (max-width: 600px) {
+  .Small.material-icons {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidenav {
+    width: 200px; 
+  }
+  .sidenav li>a {
+    padding: 0;
+    height:auto;
+  }
+
+}
+
+.scroll-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+
+.scroll-top-button button:hover{
+  background-color: #2eafec;
+}
+
+
+.scroll-top-button button{
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #039be5;
+}
+
+@media only screen and (max-width: 600px) {
+  .custom-departure-label {
+    display: inline-flex;
+    align-items:center;
+  }
+}
+
+
+
+@media (max-width: 600px){
+  .space-btn{
+    margin-top: 10px;
+  }
+}
+
+.switch > label {
+  color: white;
+}
+
+@media (max-width: 992px) {
+  .switch > label {
+    color: black;
+  }
+}
+
