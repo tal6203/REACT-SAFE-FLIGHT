@@ -14,44 +14,34 @@ const Footer = () => {
 
   return (
     <footer className="App-footer">
-      <div className="container">
-        <div className="row">
-          <div className="col s12 m6">
-            <h5 className="white-text" style={{ textDecoration: 'underline' }}>About Us</h5>
-            <p className="grey-text text-lighten-4">
-              We are Safe Flight, guaranteeing that you will receive the newest flight updates, information about changes in flights, as well as a variety of airlines to choose from. And of course, all of this in the most convenient and user-friendly manner for you.
-            </p>
-          </div>
-          <div className="col s12 m6 center-align">
-            <h5 className="white-text" style={{ textDecoration: 'underline' }}>Contact Us</h5>
-            <p className="grey-text text-lighten-4">
-            <span style={{ display: 'flex', justifyContent:'center',marginBottom:'10px' }}>
-              <i className="material-icons" onClick={handleEmailClick} style={{ cursor: 'pointer' }}>email</i>
-              &nbsp;Email: <a href={`mailto:${emailAddress}`} onClick={handleEmailClick} style={{ color: 'white' }}>&nbsp;{emailAddress}</a><br />
-            </span>
-            <span style={{ display: 'flex', justifyContent:'center',marginBottom:'10px' }}>
-              <i className="material-icons" onClick={handlePhoneClick} style={{ cursor: 'pointer' }}>phone</i>
-              &nbsp;Phone: <a href={`tel:${phoneNumber}`} onClick={handlePhoneClick} style={{ color: 'white' }}>&nbsp;(+972) 52-681-2203</a><br />
-            </span>
-            <span style={{ display: 'flex', justifyContent:'center' }}>
-              <i className="material-icons">link</i> &nbsp;Linkedin: <a href='https://www.linkedin.com/in/tal-abutbul' target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>&nbsp;www.linkedin.com/in/tal-abutbul</a>
-            </span>
-          </p>
-          </div>
+    <div className="container">
+      <div className="row">
+        <div className="col s12" style={{marginTop:'10px'}}>
+          <span className="center-align">
+            <a className="btn-floating" style={{ backgroundColor: '#3b5998', marginRight: '20px' }} rel="noreferrer" target="_blank" href="https://www.facebook.com/talxbad/">
+              <i className="material-icons">facebook</i>
+            </a>
+            <a className="btn-floating" href={`tel:${phoneNumber}`} onClick={handlePhoneClick} style={{ backgroundColor: '#55acee' , marginRight: '20px' }} >
+            <i className="material-icons">phone</i>
+            </a>
+            <a className="btn-floating" href={`mailto:${emailAddress}`} onClick={handleEmailClick}  style={{ backgroundColor: '#dd4b39', marginRight: '20px' }} >
+            <i className="material-icons">email</i>
+            </a>
+            <a className="btn-floating" style={{ backgroundColor: '#0082ca', marginRight: '20px' }} rel="noreferrer" target="_blank" href="https://www.linkedin.com/in/tal-abutbul/">
+              <i className="bi bi-linkedin"></i>
+            </a>
+            <a className="btn-floating" style={{  backgroundColor: '#ac2bac'}} rel="noreferrer" target="_blank" href="https://github.com/tal6203">
+            <i className="bi bi-github"></i> 
+            </a>
+          </span>
         </div>
       </div>
-      <div className="darken-1">
-        <div className="container">
-          <div className="row">
-            <div className="col s12">
-              <p className="center-align white-text" style={{ fontSize: '14px' }}>
-                © {new Date().getFullYear()} SAFE FLIGHT. All rights reserved.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+    </div>
+
+    <span style={{fontWeight:'bold'}} className="bg-dark text-center p-3">
+    © {new Date().getFullYear()} SAFE FLIGHT. All rights reserved.
+    </span>
+  </footer>
   );
 }
 
