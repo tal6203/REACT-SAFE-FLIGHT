@@ -77,10 +77,7 @@ nav {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-.App-footer h5,
-.App-footer p {
-  color: white;
-}
+
 
 /* Dark mode styles */
 .dark-mode html {
@@ -163,6 +160,9 @@ nav {
 
 .dark-mode .card hr{
   color: white;
+}
+.dark-mode .App-footer {
+  box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .dark-mode .card h5{
