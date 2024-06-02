@@ -180,7 +180,11 @@ class FlightSearchPage extends Component {
         const { countries, airlines } = this.props;
 
         if (!countries || !airlines) {
-            return <div>Loading...</div>;
+            return (
+                <div className="loading-spinner-a">
+                    <div className="loading-spinner-page"></div>
+                </div>
+            );
         }
 
         const destinationCountries = countries.filter((country) => country.name !== originCountry);
