@@ -5,7 +5,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { setCountries, setAirlines } from './actions'
 import config from './config/default.json'
-
+import CreditCardModal from './CreditCardModal';
 
 class FlightSearchPage extends Component {
     state = {
@@ -15,6 +15,8 @@ class FlightSearchPage extends Component {
         selectedAirlines: [],
         flights: [],
         isLoading: false,
+        showModal: false,
+        currentFlightId: null,
     };
 
     async componentDidMount() {
@@ -116,40 +118,41 @@ class FlightSearchPage extends Component {
         }
     };
 
+    purchaseTicket = (flightId) => {
+        this.setState({ showModal: true, currentFlightId: flightId });
+    };
 
-    purchaseTicket = async (flightId) => {
+    handlePaymentSuccess = async () => {
         try {
+            this.setState({ showModal: false });
             const username = localStorage.getItem('username');
             const token = localStorage.getItem('jwtToken');
             const headers = {
                 Authorization: `Bearer ${token}`,
             };
 
-
             // // Create the ticket purchase payload
             const ticketData = {
-                flightId: flightId,
+                flightId: this.state.currentFlightId,
             };
 
             // Make the request to add the ticket
             const addTicketResponse = await axios.post(`${config.render.url}/api/customers/addTicketByUsername/${username}`, ticketData, { headers });
 
             if (addTicketResponse.status === 201) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Success!',
-                    text: 'Ticket purchased successfully!',
-                });
                 const updatedFlights = this.state.flights.map((flight) => {
-                    if (flight.id === flightId) {
+                    if (flight.id === this.state.currentFlightId) {
                         return { ...flight, remainingTickets: flight.remainingTickets - 1 };
                     }
                     return flight;
                 });
 
                 this.setState({ flights: updatedFlights });
-
-
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Payment Successful',
+                    text: 'Your payment has been processed successfully.',
+                });
             }
         } catch (error) {
             console.error('Error purchasing ticket:', error.response.data);
@@ -160,6 +163,10 @@ class FlightSearchPage extends Component {
                 text: 'Cannot purchase a ticket for the same flight twice.',
             });
         }
+    };
+
+    handleModalClose = () => {
+        this.setState({ showModal: false });
     };
 
     handleClear = () => {
@@ -175,7 +182,7 @@ class FlightSearchPage extends Component {
     };
 
     render() {
-        const { departureTime, originCountry, destinationCountry, selectedAirlines, flights, isLoading } = this.state;
+        const { departureTime, originCountry, destinationCountry, selectedAirlines, flights, isLoading, showModal  } = this.state;
 
         const { countries, airlines } = this.props;
 
@@ -358,6 +365,12 @@ class FlightSearchPage extends Component {
                         <i className="material-icons">arrow_upward</i>
                     </button>
                 </div>
+                {showModal && (
+                    <CreditCardModal
+                        onClose={this.handleModalClose}
+                        onPaymentSuccess={this.handlePaymentSuccess}
+                    />
+                )}
             </div>
         );
     }
