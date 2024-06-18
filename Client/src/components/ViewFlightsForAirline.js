@@ -129,7 +129,7 @@ class ViewFlightsForAirline extends Component {
 
     handleSwapCountries = () => {
         const { editedFlights } = this.state;
-    
+
         this.setState({
             editedFlights: {
                 ...editedFlights,
@@ -139,7 +139,7 @@ class ViewFlightsForAirline extends Component {
         });
     };
 
-    
+
 
     render() {
         const { flights, editedFlights } = this.state;
@@ -154,79 +154,79 @@ class ViewFlightsForAirline extends Component {
 
         return (
             <div className="container" style={{ fontFamily: 'OpenSans', marginTop: '20px', marginBottom: '50px' }}>
-            {flights.length === 0 ? (
-                <div className="row">
-                <div className="col s12 m6 offset-m3 l4 offset-l4">
-                    <div className="card z-depth-5" style={{ marginBottom: '20px', border: '3px solid black', borderRadius: '15px', backgroundColor: '#f5f5f5' }}>
-                        <div className="card-content center-align">
-                            <h4>No Flights Available</h4>
-                            <p style={{ color: '#757575' }}>Currently, there are no flights to display.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            ) : (
-                <div className="row">
-                    {flights.map((flight) => (
-                        <div key={flight.id} className="col s12 m6 l4">
-                            <div
-                                key={flight.id}
-                                className="card hoverable z-depth-5"
-                                style={{
-                                    marginBottom: '20px',
-                                    backgroundImage: 'url(/img/background-flghts.webp)',
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'right',
-                                    border: '3px solid black',
-                                }}
-                            >
-                                <div className="card-content">
-                                    <span className="card-title">
-                                        <span className="my-span">
-                                            <strong>Flight ID: {flight.id}</strong>
-                                        </span>
-                                    </span>
-                                    <p style={{ marginTop: '7px' }}>
-                                        <span className="my-span" style={{display: 'inline-flex', alignItems: 'center'}}>
-                                            <strong>Origin Country:</strong> &nbsp;{flight.originCountry}
-                                            &nbsp;<img src={`/img/${flight.originCountry}_flag.png`} alt={`${flight.originCountry} flag`} style={{ height: '20px' }} />
-                                        </span>
-                                    </p>
-                                    <p style={{ marginTop: '7px' }}>
-                                        <span className="my-span" style={{display: 'inline-flex', alignItems: 'center'}}>
-                                            <strong>Destination Country:</strong> &nbsp;{flight.destinationCountry}
-                                            &nbsp;<img src={`/img/${flight.destinationCountry}_flag.png`} alt={`${flight.destinationCountry} flag`} style={{ height: '20px' }} />
-                                        </span>
-                                    </p>
-                                    <p style={{ marginTop: '7px' }}>
-                                        <span className="my-span" >
-                                            <strong>Departure Time:</strong> {flight.departureTime.replace('T', ' | ')}
-                                        </span>
-                                    </p>
-                                    <p style={{ marginTop: '7px' }}>
-                                        <span className="my-span">
-                                            <strong>Landing Time:</strong> {flight.landingTime.replace('T', ' | ')}
-                                        </span>
-                                    </p>
-                                    <p style={{ marginTop: '7px' }}>
-                                        <span className="my-span">
-                                            <strong>Remaining Tickets:</strong> {flight.remainingTickets}
-                                        </span>
-                                    </p>
-                                </div>
-                                <div className="card-action center-align" style={{ backgroundColor: 'initial' }}>
-                                    <button
-                                        className="btn waves-effect waves-light blue "
-                                        style={{ display: 'inline-flex', alignItems: 'center' }}
-                                        onClick={() => this.handleEditFlight(flight.id)}
-                                    >
-                                        Edit &nbsp;<i className="material-icons">edit</i>
-                                    </button>
+                {flights.length === 0 ? (
+                    <div className="row">
+                        <div className="col s12 m6 offset-m3 l4 offset-l4">
+                            <div className="card z-depth-5" style={{ marginBottom: '20px', border: '3px solid black', borderRadius: '15px', backgroundColor: '#f5f5f5' }}>
+                                <div className="card-content center-align">
+                                    <h4>No Flights Available</h4>
+                                    <p style={{ color: '#757575' }}>Currently, there are no flights to display.</p>
                                 </div>
                             </div>
                         </div>
-                    ))}
-                </div> )}
+                    </div>
+                ) : (
+                    <div className="row">
+                        {flights.map((flight) => (
+                            <div key={flight.id} className="col s12 m6 l4">
+                                <div
+                                    key={flight.id}
+                                    className="card hoverable z-depth-5"
+                                    style={{
+                                        marginBottom: '20px',
+                                        backgroundImage: 'url(/img/background-flghts.webp)',
+                                        backgroundSize: 'cover',
+                                        backgroundPosition: 'right',
+                                        border: '3px solid black',
+                                    }}
+                                >
+                                    <div className="card-content">
+                                        <span className="card-title">
+                                            <span className="my-span">
+                                                <strong>Flight ID: {flight.id}</strong>
+                                            </span>
+                                        </span>
+                                        <p style={{ marginTop: '7px' }}>
+                                            <span className="my-span" style={{ display: 'inline-flex', alignItems: 'center' }}>
+                                                <strong>Origin Country:</strong> &nbsp;{flight.originCountry}
+                                                &nbsp;<img src={`/img/${flight.originCountry}_flag.png`} alt={`${flight.originCountry} flag`} style={{ height: '20px' }} />
+                                            </span>
+                                        </p>
+                                        <p style={{ marginTop: '7px' }}>
+                                            <span className="my-span" style={{ display: 'inline-flex', alignItems: 'center' }}>
+                                                <strong>Destination Country:</strong> &nbsp;{flight.destinationCountry}
+                                                &nbsp;<img src={`/img/${flight.destinationCountry}_flag.png`} alt={`${flight.destinationCountry} flag`} style={{ height: '20px' }} />
+                                            </span>
+                                        </p>
+                                        <p style={{ marginTop: '7px' }}>
+                                            <span className="my-span" >
+                                                <strong>Departure Time:</strong> {flight.departureTime.replace('T', ' | ')}
+                                            </span>
+                                        </p>
+                                        <p style={{ marginTop: '7px' }}>
+                                            <span className="my-span">
+                                                <strong>Landing Time:</strong> {flight.landingTime.replace('T', ' | ')}
+                                            </span>
+                                        </p>
+                                        <p style={{ marginTop: '7px' }}>
+                                            <span className="my-span">
+                                                <strong>Remaining Tickets:</strong> {flight.remainingTickets}
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <div className="card-action center-align" style={{ backgroundColor: 'initial' }}>
+                                        <button
+                                            className="btn waves-effect waves-light blue "
+                                            style={{ display: 'inline-flex', alignItems: 'center' }}
+                                            onClick={() => this.handleEditFlight(flight.id)}
+                                        >
+                                            Edit &nbsp;<i className="material-icons">edit</i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>)}
 
                 <div id="editFlightModal" className="modal custom-modal">
                     <div className="modal-content">
@@ -273,7 +273,7 @@ class ViewFlightsForAirline extends Component {
                                 <i className="material-icons tiny">public</i>&nbsp;Destination Country:
                             </label>
                         </div>
-                        <div className="input-field">
+                        <div className="input-field" style={{marginTop:'20px'}}>
                             <input
                                 type="datetime-local"
                                 value={editedFlights.departureTime}
@@ -308,17 +308,15 @@ class ViewFlightsForAirline extends Component {
                             </label>
                         </div>
                     </div>
-                    <div className="modal-footer">
-                        <div className='center-align'>
-                            <button className="modal-close btn waves-effect waves-light green" style={{ display: 'inline-flex', alignItems: 'center' }} onClick={this.saveEditedFlight}>
+                    <div className="modal-footer" style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+                            <button className="modal-close btn waves-effect waves-light green" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '45%' }} onClick={this.saveEditedFlight}>
                                 Save &nbsp;<i className="material-icons">save</i>
                             </button>
-                            &nbsp;&nbsp;&nbsp;
-                            <button className="modal-close btn waves-effect waves-light red" style={{ display: 'inline-flex', alignItems: 'center' }} onClick={this.closeEditModal}>
+                            <button className="modal-close btn waves-effect waves-light red" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '45%' }} onClick={this.closeEditModal}>
                                 Cancel &nbsp;<i className="material-icons">close</i>
                             </button>
                         </div>
-                    </div>
+                  
                 </div>
             </div>
         )
