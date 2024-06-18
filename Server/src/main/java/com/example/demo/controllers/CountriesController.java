@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin(origins = "https://safe-flight.netlify.app")
+@CrossOrigin
 @RestController
 @RequestMapping("/api/countries")
 public class CountriesController {
