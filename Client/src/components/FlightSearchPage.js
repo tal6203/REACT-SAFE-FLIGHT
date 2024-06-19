@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { setCountries, setAirlines } from './actions'
 import config from './config/default.json'
 import CreditCardModal from './CreditCardModal';
+import LazyLoad from 'react-lazyload';
 
 class FlightSearchPage extends Component {
     state = {
@@ -45,7 +46,7 @@ class FlightSearchPage extends Component {
         }
     }
 
-   
+
 
     scrollToTop = () => {
         window.scrollTo({
@@ -182,7 +183,7 @@ class FlightSearchPage extends Component {
     };
 
     render() {
-        const { departureTime, originCountry, destinationCountry, selectedAirlines, flights, isLoading, showModal  } = this.state;
+        const { departureTime, originCountry, destinationCountry, selectedAirlines, flights, isLoading, showModal } = this.state;
 
         const { countries, airlines } = this.props;
 
@@ -205,10 +206,10 @@ class FlightSearchPage extends Component {
                 <div className="row">
                     <div className="col s12">
                         <form className="card z-depth-5" onSubmit={this.handleSubmit} style={{ padding: '20px', fontFamily: 'OpenSans', border: '5px solid black', maxWidth: '700px', margin: '0 auto' }}>
-                            <h5 className="center-align" style={{fontWeight:'bolder'}}>Flight Search</h5>
+                            <h5 className="center-align" style={{ fontWeight: 'bolder' }}>Flight Search</h5>
                             <div className="row">
                                 <div className="col s12 center-align">
-                                    <div className="input-field col s6 offset-s3" style={{padding:'5px'}}>
+                                    <div className="input-field col s6 offset-s3" style={{ padding: '5px' }}>
                                         <i className="material-icons prefix">event</i>
                                         <input
                                             type="date"
@@ -316,7 +317,10 @@ class FlightSearchPage extends Component {
                                                 <div key={flight.id} className="col s12 m6">
                                                     <div className="card hoverable z-depth-3">
                                                         <div className="card-image">
-                                                            <img className="materialboxed" style={{ width: '100%', height: '200px', objectFit: 'cover', border: '4px solid black' }} src={`./img/${flight.destinationCountry}.jpg`} alt={flight.destinationCountry} />
+                                                            <LazyLoad height={200} offset={100}>
+                                                                <img className="materialboxed" style={{ width: '100%', height: '200px', objectFit: 'cover', border: '4px solid black' }}
+                                                                    src={`./img/${flight.destinationCountry}.jpg`} alt={flight.destinationCountry} />
+                                                            </LazyLoad>
                                                         </div>
                                                         <span className="card-title" style={{ background: 'rgba(33, 150, 243, 0.7)', padding: '10px', borderRadius: '0 0 20px 20px', color: 'white', display: 'inline-flex', alignItems: 'center' }}>{flight.airlineCompany}&nbsp;&nbsp;&nbsp;&nbsp; <img style={{ height: '40px' }} src={`./img/${flight.airlineCompany}.png`} alt={flight.airlineCompany} /></span>
                                                         <div className="card-content">
@@ -324,8 +328,8 @@ class FlightSearchPage extends Component {
                                                                 <div className="col s12">
                                                                     <p>
                                                                         <strong>Flight ID:</strong> {flight.id}<br />
-                                                                        <strong>Origin Country:</strong>&nbsp;{flight.originCountry}&nbsp;<span style={{display: 'inline-flex', alignItems: 'center'}}><img src={`./img/${flight.originCountry}_flag.png`} alt={`${flight.originCountry} flag`} style={{ height: '15px' }} /></span><br />
-                                                                        <strong>Destination Country:</strong>&nbsp;{flight.destinationCountry}&nbsp;<span style={{display: 'inline-flex', alignItems: 'center'}}><img src={`./img/${flight.destinationCountry}_flag.png`} alt={`${flight.destinationCountry} flag`} style={{ height: '15px' }} /></span><br />
+                                                                        <strong>Origin Country:</strong>&nbsp;{flight.originCountry}&nbsp;<span style={{ display: 'inline-flex', alignItems: 'center' }}><img src={`./img/${flight.originCountry}_flag.png`} alt={`${flight.originCountry} flag`} style={{ height: '15px' }} /></span><br />
+                                                                        <strong>Destination Country:</strong>&nbsp;{flight.destinationCountry}&nbsp;<span style={{ display: 'inline-flex', alignItems: 'center' }}><img src={`./img/${flight.destinationCountry}_flag.png`} alt={`${flight.destinationCountry} flag`} style={{ height: '15px' }} /></span><br />
                                                                         <strong>Departure Time:</strong> {flight.departureTime.replace('T', ' | ')}<br />
                                                                         <strong>Landing Time:</strong> {flight.landingTime.replace('T', ' | ')}<br />
                                                                         <strong>Remaining Tickets:</strong> {flight.remainingTickets}
@@ -353,7 +357,7 @@ class FlightSearchPage extends Component {
                                     </div>
                                 ) : (
                                     <div className="center-align">
-                                        <p style={{fontWeight:'bolder',fontSize:'18px'}}>No flights available for the selected criteria.</p>
+                                        <p style={{ fontWeight: 'bolder', fontSize: '18px' }}>No flights available for the selected criteria.</p>
                                     </div>
                                 )}
                             </div>
