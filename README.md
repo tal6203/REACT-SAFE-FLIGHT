@@ -1,20 +1,21 @@
-# SAFE-FLIGHT
+
+# ✈️ SAFE-FLIGHT
 
 SAFE-FLIGHT is an application designed to ensure the safety and efficiency of flight operations. It consists of both client and server components, each responsible for specific aspects of the application.
 
 ## Table of Contents
 
-- [Project Structure](#project-structure)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Deployment](#deployment)
-- [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
-- [Additional Resources](#additional-resources)
+- [📁 Project Structure](#project-structure)
+- [✨ Features](#features)
+- [⚙️ Installation](#installation)
+- [🚀 Usage](#usage)
+- [🌐 Deployment](#deployment)
+- [💻 Technologies Used](#technologies-used)
+- [🤝 Contributing](#contributing)
+- [📜 License](#license)
+- [📚 Additional Resources](#additional-resources)
 
-## Project Structure
+## 📁 Project Structure
 
 The repository is divided into two main components:
 
@@ -37,18 +38,19 @@ The server side is implemented using Java, and it includes the following:
 - **src**: Java source code and resources.
 - **pom.xml**: Maven configuration file.
 
-## Features
+## ✨ Features
 
 - **Real-time flight tracking**: Monitor flights in real-time.
 - **Safety notifications**: Receive alerts and notifications for any safety concerns.
 - **User-friendly interface**: Easy-to-use web interface for tracking and management.
 
-## Installation
+## ⚙️ Installation
 
 ### Prerequisites
 
 - Node.js and npm (for the client)
 - Java 8 or higher and Maven (for the server)
+- PostgreSQL (for the database)
 - Docker (optional, for containerized deployment)
 
 ### Client
@@ -81,13 +83,13 @@ The server side is implemented using Java, and it includes the following:
     java -jar target/your-server-application.jar
     ```
 
-## Usage
+## 🚀 Usage
 
 1. Start the server application as described above.
 2. Start the client application.
 3. Open your web browser and navigate to `http://localhost:3000` to access the SAFE-FLIGHT application.
 
-## Deployment
+## 🌐 Deployment
 
 ### Deployment Links
 
@@ -131,21 +133,22 @@ The server side is implemented using Java, and it includes the following:
 
 For continuous deployment, you can set up CI/CD pipelines using GitHub Actions, Jenkins, or other CI/CD tools to automate the deployment process whenever new changes are pushed to the repository.
 
-## Technologies Used
+## 💻 Technologies Used
 
 ### Client
 
 - React
-- JavaScript
-- HTML/CSS
+- CSS
+- Materializecss
 
 ### Server
 
 - Java
 - Spring Boot
 - Maven
+- PostgreSQL
 
-## Contributing
+## 🤝 Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -155,11 +158,11 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch (`git push origin feature/AmazingFeature`).
 5. Open a pull request.
 
-## License
+## 📜 License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-## Additional Resources
+## 📚 Additional Resources
 
 For more information and assets related to the project, please visit the following link:
 https://github.com/tal6203/REACT-SAFE-FLIGHT/assets/112417918/bf858da0-d7fe-4cb6-851e-c007377d222b
