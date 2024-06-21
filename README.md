@@ -8,9 +8,11 @@ SAFE-FLIGHT is an application designed to ensure the safety and efficiency of fl
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Deployment](#deployment)
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
 - [License](#license)
+- [Additional Resources](#additional-resources)
 
 ## Project Structure
 
@@ -85,6 +87,50 @@ The server side is implemented using Java, and it includes the following:
 2. Start the client application.
 3. Open your web browser and navigate to `http://localhost:3000` to access the SAFE-FLIGHT application.
 
+## Deployment
+
+### Deployment Links
+
+- **Frontend**: Deployed on Netlify at [safe-flight.netlify.app](https://safe-flight.netlify.app/)
+- **Backend**: Deployed on Koyeb
+
+### Using Docker (Optional)
+
+1. Ensure Docker is installed on your machine.
+2. Navigate to the `Server` directory:
+    ```bash
+    cd Server
+    ```
+3. Build the Docker image for the server:
+    ```bash
+    docker build -t safe-flight-server .
+    ```
+4. Run the Docker container for the server:
+    ```bash
+    docker run -d -p 8080:8080 safe-flight-server
+    ```
+5. Navigate to the `Client` directory:
+    ```bash
+    cd Client
+    ```
+6. Build the Docker image for the client:
+    ```bash
+    docker build -t safe-flight-client .
+    ```
+7. Run the Docker container for the client:
+    ```bash
+    docker run -d -p 3000:3000 safe-flight-client
+    ```
+
+### Manual Deployment
+
+1. Deploy the server application to Koyeb or your preferred Java hosting service.
+2. Deploy the client application to Netlify or your preferred static site hosting service.
+
+### Continuous Deployment
+
+For continuous deployment, you can set up CI/CD pipelines using GitHub Actions, Jenkins, or other CI/CD tools to automate the deployment process whenever new changes are pushed to the repository.
+
 ## Technologies Used
 
 ### Client
@@ -115,5 +161,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Additional Resources
 
-For more information and assets related to the project:
+For more information and assets related to the project, please visit the following link:
 https://github.com/tal6203/REACT-SAFE-FLIGHT/assets/112417918/bf858da0-d7fe-4cb6-851e-c007377d222b
