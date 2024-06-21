@@ -115,9 +115,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Additional Resources
 
-For more information and assets related to the project, please visit the following link:
-[Project Assets](https://github.com/tal6203/REACT-SAFE-FLIGHT/assets/112417918/bf858da0-d7fe-4cb6-851e-c007377d222b)
-
-
-
+For more information and assets related to the project:
 https://github.com/tal6203/REACT-SAFE-FLIGHT/assets/112417918/bf858da0-d7fe-4cb6-851e-c007377d222b
